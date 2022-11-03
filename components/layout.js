@@ -40,7 +40,7 @@ export default function Layout({ children, home }) {
                     </>
                 ) : (
                     <>
-                        <Link href="/">
+                        <Link href="/" legacyBehavior>
 
                             <Image
                                 priority
@@ -53,7 +53,7 @@ export default function Layout({ children, home }) {
 
                         </Link>
                         <h2 className={utilStyles.headingLg}>
-                            <Link href="/" className={utilStyles.colorInherit}>
+                            <Link href="/" className={utilStyles.colorInherit} legacyBehavior>
                                 {name}
                             </Link>
                         </h2>
