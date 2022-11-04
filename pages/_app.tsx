@@ -1,8 +1,21 @@
+import {CacheProvider} from "@emotion/react";
 import '../styles/global.css'
 import {AppProps} from "next/app";
+import createEmotionCache from '../utils/createEmotionCache';
+import {CssBaseline, ThemeProvider} from "@mui/material";
+import lightTheme from '../styles/theme/lightTheme';
 
-export default function App({ Component, pageProps }: AppProps) {
+const clientSideEmotionCache = createEmotionCache();
+
+export default function App({ Component,  pageProps }) {
+    const emotionCache = clientSideEmotionCache
+
     return (
-        <Component {...pageProps} />
+    <CacheProvider value={emotionCache}>
+        <ThemeProvider theme={lightTheme}>
+            <CssBaseline />
+            <Component {...pageProps} />
+        </ThemeProvider>
+    </CacheProvider>
     )
 }

@@ -1,8 +1,8 @@
 import Layout from '../../components/layout'
-import { getAllPostIds, getPostData } from '../../lib/posts'
+import { getAllPostIds, getPostData } from '../../utils/posts'
 import Head from "next/head";
 import Date from "../../components/date";
-import utilStyles from '../../styles/utils.module.css';
+import utilStyles from '../../styles/Home.module.css';
 import {GetStaticPaths, GetStaticProps} from "next";
 
 export default function MyPost({postData}: {
